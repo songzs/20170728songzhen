@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="/static/jquery-1.4.2.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form action="addUser.do" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">username</label>
+        <input type="email" name="username" th:value="${users.username}" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" name="password" th:value="${users.password}" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputage">age</label>
+        <select class="form-control" id="exampleInputage" th:value="${users.age}" name="age">
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label class="radio-inline">
+            <input type="radio" name="age" id="inlineRadio1" checked="checked" value="男"> 男
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="age"id="inlineRadio2" value="女"> 女
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputFile">txiang</label>
+        <input type="file" name="txiang" id="exampleInputFile" th:value="${users.txiang}">
+        <p class="help-block">Example block-level help text here.</p>
+    </div>
+    <div class="checkbox">
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" th:value="${users.hobby}" checked="checked" name="hobby" value="唱歌"> 唱歌
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox2" name="hobby" value="敲代码"> 敲代码
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox3" name="hobby" value="跳舞"> 跳舞
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox4" name="hobby" value="吃饭"> 吃饭
+        </label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</body>
+</html>
